@@ -17,6 +17,10 @@ extern "C" {
     #define DEBUG_API
 #endif /* _WIN32 */
 
+#ifdef __sun
+#  include <sys/varargs.h>
+#endif /* __sun */
+
 typedef struct debug_context_s debug_context_t;
 
 DEBUG_API debug_context_t* debug_create_context(const char* name);
